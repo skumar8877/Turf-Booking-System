@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    color: #1f2933;
+    background: #f4f7fb;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button {
+    font: inherit;
+}
+
+.app-shell {
+    width: min(1180px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 36px 0 48px;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.app-kicker,
+.section-label {
+    margin: 0 0 6px;
+    color: #5b6778;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.app-header h1 {
+    margin: 0;
+    color: #17202a;
+    font-size: clamp(1.85rem, 4vw, 2.8rem);
+    font-weight: 800;
+}
+
+.btn-reset,
+.btn-book {
+    border: 0;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.btn-reset {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    border: 1px solid #d3d9e3;
+    color: #394556;
+    background: #ffffff;
+}
+
+.btn-reset:hover {
+    border-color: #b8c1cf;
+    color: #17202a;
+    background: #f8fafc;
+}
+
+.booking-board {
+    padding: 24px;
+    border: 1px solid #dde4ee;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.board-header h2 {
+    margin: 0;
+    color: #17202a;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.arena-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(136px, 164px));
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+.arena-card-wrap {
+    width: 100%;
+}
+
+.arena-card {
+    position: relative;
+    min-height: 164px;
+    overflow: hidden;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(31, 41, 51, 0.06);
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.arena-card:hover {
+    border-color: #9fb4d1;
+    box-shadow: 0 16px 32px rgba(31, 41, 51, 0.1);
+    transform: translateY(-2px);
+}
+
+.arena-card::before {
+    position: absolute;
+    inset: 0;
+    height: 5px;
+    background: #2f855a;
+    content: "";
+}
+
+.arena-format {
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    z-index: 1;
+    padding: 5px 9px;
+    border: 1px solid #c7ead8;
+    border-radius: 8px;
+    color: #24634a;
+    background: #edf8f1;
+    font-size: 0.74rem;
+    font-weight: 800;
+}
+
+.arena-card-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 164px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 54px 16px 18px;
+    text-align: center;
+}
+
+.arena-card h4 {
+    margin: 0;
+    color: #17202a;
+    font-size: 2.25rem;
+    font-weight: 850;
+}
+
+.btn-book {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 14px;
+    color: #ffffff;
+    background: #2359a8;
+}
+
+.btn-book:hover {
+    color: #ffffff;
+    background: #1d4b8d;
+    box-shadow: 0 8px 18px rgba(35, 89, 168, 0.2);
+}
+
+.btn-book:disabled {
+    color: #8b97a7;
+    background: #e8edf4;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.status-panel {
+    height: 100%;
+    padding: 18px;
+    border: 1px solid #dde4ee;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(31, 41, 51, 0.06);
+}
+
+.status-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.status-heading h3 {
+    margin: 0;
+    color: #17202a;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.status-heading span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 28px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #5b6778;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.status-panel-booked .status-heading span {
+    background: #2359a8;
+}
+
+.status-panel-blocked .status-heading span {
+    background: #b54708;
+}
+
+.status-panel-available .status-heading span {
+    background: #2f855a;
+}
+
+.status-list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.status-item,
+.status-empty {
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #edf1f6;
+    border-radius: 8px;
+    background: #fbfcfe;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #17202a;
+    font-weight: 750;
+}
+
+.status-empty {
+    display: flex;
+    align-items: center;
+    color: #7b8794;
+    font-weight: 650;
+}
+
+.status-format {
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: #24634a;
+    background: #edf8f1;
+    font-size: 0.74rem;
+    font-weight: 800;
+}
+
+@media (max-width: 980px) {
+    .arena-grid {
+        grid-template-columns: repeat(3, minmax(136px, 164px));
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .app-shell {
+        width: min(100% - 20px, 1180px);
+        padding: 24px 0 36px;
+    }
+
+    .app-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .booking-board {
+        padding: 16px;
+    }
+
+    .arena-grid {
+        grid-template-columns: repeat(2, minmax(130px, 1fr));
+        gap: 12px;
+    }
+
+    .arena-card,
+    .arena-card-body {
+        min-height: 154px;
+    }
+}
